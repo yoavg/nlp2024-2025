@@ -4,8 +4,8 @@ This assignment has two parts. You can start working on the Part A right away, b
 
 You are given texts in two languages. The file `english.txt.gz` contains texts in English, while the file `hebrew.txt.gz` contains text in Hebrew (both files are in UTF-8 encoding, and compressed using gzip).
 
-- [english.txt.gz](https://github.com/yoavg/nlp2024-2025/releases/download/untagged-27ba45f56c877163902d/english.txt.gz)
-- [hebrew.txt.gz](https://github.com/yoavg/nlp2024-2025/releases/download/untagged-27ba45f56c877163902d/hebrew.txt.gz)
+- [english.txt.gz](https://github.com/yoavg/nlp2024-2025/releases/download/ass1a-data/english.txt.gz)
+- [hebrew.txt.gz](https://github.com/yoavg/nlp2024-2025/releases/download/ass1a-data/hebrew.txt.gz)
 
 ## Token and type counts
 
