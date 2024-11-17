@@ -1,2 +1,2 @@
 # theme: jekyll-theme-minima
-remote-theme: https://github.com/sighingnow/jekyll-gitbook
+remote_theme: sighingnow/jekyll-gitbook
