@@ -1,3 +1,4 @@
+# Intro to NLP 2024-2025, Assignment 1.
 
 This assignment has two parts. You can start working on the Part A right away, but may want to wait with Part B until after the class on syntax and grammar.
 # Part A: words and tokens vocabularies (50 points)
