@@ -136,7 +136,7 @@ Submit your BPE implementation (`bpe.py`) as well as the answers to the question
 
 The `bpe.py` file must include a function `train_bpe` with the signature defined above, and we should be able to write `from bpe import train_bpe` in our own script and run the file. In other words, the `bpe.py` should act as a module: all runnable code which is not inside a function should be guarded under:
 ```python
-if __name__ == "main":
+if __name__ == "__main__":
 ```
 
 # Part B: Generating sentences with a Context-Free Grammar (50 points)
@@ -303,18 +303,18 @@ python generate.py grammar -t
 instead of just printing `the floor kissed the delicious chief of staff .` it should print the more elaborate version
 ```
 (ROOT
-	(S	(NP (Det the)
-			(Noun floor))
-	(VP (Verb kissed)
-		(NP (Det the)
-			 (Noun (Adj delicious)
-				   (Noun chief
-						 of
-						 staff)))))
+     (S (NP (Det the)
+        (Noun floor))
+     (VP  (Verb kissed)
+          (NP  (Det the)
+               (Noun (Adj delicious)
+                     (Noun chief
+                           of
+                           staff)))))
    .)
 ```
 
-which includes extra information showing how the sentence was generated. For example, the above derivation used the rules Noun \(\rightarrow\) floor and Noun \(\rightarrow\)  Adj Noun, among others.
+which includes extra information showing how the sentence was generated. For example, the above derivation used the rules Noun $\rightarrow$ floor and Noun $\rightarrow$  Adj Noun, among others.
 
 Note: It's not too hard to print the pretty indented format above. But it's not necessary. It's sufficient if you will the entire expression on a single line:
 ```
@@ -399,10 +399,10 @@ Here, you should try to find a reasonably elegant way of generating all the foll
 
 | tense $\rightarrow$<br>aspect $\downarrow$ | present         | past            | future                |
 | ------------------------------------------ | --------------- | --------------- | --------------------- |
-| Simple                                     | eats            | ate             | will eat              |
-| Perfect                                    | has eaten       | had eaten       | will have eaten       |
-| Progressive                                | is eating       | was eating      | will be eating        |
-| Perfect Progressive                        | has been eating | had been eating | will have been eating |
+| **Simple**                                     | eats            | ate             | will eat              |
+| **Perfect**                                    | has eaten       | had eaten       | will have eaten       |
+| **Progressive**                                | is eating       | was eating      | will be eating        |
+| **Perfect Progressive**                        | has been eating | had been eating | will have been eating |
 
 ### (g) Appositives.
 
@@ -415,7 +415,7 @@ However, if you also did (c), try to extend your rules from that problem to auto
 
 **What To Submit:**
 Hand in your grammar (commented) as a file named `grammar4`.
-The first line of `grammar4` must be a comment, including the letters of the two phenomena you chose to implement, separated by space. Example `# b f:
+The first line of `grammar4` must be a comment, including the letters of the two phenomena you chose to implement, separated by space. Example `# b f`:
 
 Submit 50 random generated sentences from your grammar in `grammar4.gen`.
 
