@@ -2,6 +2,9 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 
 {% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,6 +16,13 @@
     {% include head-custom.html %}
   </head>
   <body>
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$']]
+    }
+  };
+</script>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <main id="content" class="main-content" role="main">
