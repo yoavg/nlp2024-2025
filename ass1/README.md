@@ -70,7 +70,7 @@ These answers should appear in a PDF file called `unigrams.pdf` .
 
 We define a sequence of $n$ tokens as an "n-gram". For example, `I am not the` is a 4-gram, and `the big brown box` is also a 4-gram. 
 
-1. In each language, what are the top-ten 5-grams in each file and their frequencies? What are the top-ten 10-grams in each file and their frequencies? what is the longest n-gram in each file and its frequency? Briefly discuss and explain the results that you see. 
+1. In each language, what are the top-ten 5-grams in each file and their frequencies? What are the top-ten 10-grams in each file and their frequencies? what is the longest n-gram with a frequency above 1 in each file and its frequency? Briefly discuss and explain the results that you see. 
    
 These answers should appear in a PDF file called `ngrams.pdf`.
 
