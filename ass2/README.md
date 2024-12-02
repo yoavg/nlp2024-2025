@@ -256,3 +256,7 @@ Your predictions on the test sets (we will measure your accuracies on these usin
 
 A PDF file called `part-B.pdf` containing your names and IDs, and a description of your train and dev scores and the approaches and the working process you took for each of the pars B.1.1, B.1.2, B.1.3, B.2.
 
+# A note on grading:
+
+Part of your grade for part B will be based on the test-set performance of your models: the best-performing model will receive full credit (100%) for its section, while other models will be graded proportionally. The creativity of you solutions and the quality of your reports will also be taken into account when grading.
+
