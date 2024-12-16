@@ -1,6 +1,6 @@
 # Intro to NLP 2024-2025, Assignment 3.
 
-**Trying to help people get their rights!**
+**Trying to help people take up their rights!**
 
 **IMPORTANT**: The assignment has two parts. Part 1 is to be submitted **before** Part 2.
 
