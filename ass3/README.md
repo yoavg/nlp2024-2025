@@ -42,7 +42,7 @@ We also provide the following script:
 
 - [src/get_random_page.py](src/get_random_page.py)
 
-Extract the files from `kolzchut.tgz` and see that you get the `get_random_page.py` script to work. Running it should print two lines: a URL and a file-name. You can then open either of them in your browser. 
+Extract the files from `kolzchut.tgz` and see that you get the `get_random_page.py` script to work. Running it should print three lines: a URL, a file-name, and an ID. You can then open either the file or the URL in your browser (on most OSs, the file should open automatically, but the URL will lead to the website itself, which has nicer styling).
 
 ## Part 1:  Dev-set Creation and Warm-up (35 points), submit a week from publication.
 
