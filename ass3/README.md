@@ -40,7 +40,7 @@ The [kolzchut.tgz](https://github.com/yoavg/nlp2024-2025/releases/download/ass3-
 
 We also provide the following script:
 
-- [src/get_random_page.py]
+- [src/get_random_page.py](src/get_random_page.py)
 
 Extract the files from `kolzchut.tgz` and see that you get the `get_random_page.py` script to work. Running it should print two lines: a URL and a file-name. You can then open either of them in your browser. 
 
