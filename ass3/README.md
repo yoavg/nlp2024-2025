@@ -206,7 +206,7 @@ We ask you to only submit two files:
 ```
 top scoring ids using bm25
 top scoring ids using avg of static word vecs
-top scoring ids using avg of roberta-base
+top scoring ids using avg of bert-base-uncased
 top scoring ids using pre-trained multi-qa-MiniLM-L6-dot-v1
 ```
 
@@ -215,7 +215,7 @@ top scoring ids using pre-trained multi-qa-MiniLM-L6-dot-v1
 ```
 recall@20 and MRR using bm25
 recall@20 and MRR using avg of static word vecs
-recall@20 and MRR using avg of roberta-base
+recall@20 and MRR using avg of bert-base-uncased
 recall@20 and MRR using pre-trained multi-qa-MiniLM-L6-dot-v1
 ```
 
