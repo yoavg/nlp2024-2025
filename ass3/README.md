@@ -58,7 +58,7 @@ The task we are attempting to solve is to answer questions based on the data in 
 
 But how do such questions look like? This is up to you to think of and define, and we ask you to think of (at least) 20 different questions (or queries) to use in your dataset.
 
-The process that we ask you to follow is to sample a random page (using the [src/get_random_page.py] script provided in part 0), look at it, and try to think of a question that this page answers, and that someone might look for. Once you found a question, record the page, the question, and text from the page that answers this question (the text may come from different parts of the page). Do this until you have **questions from 20 different pages**. (You can have more than one question per page if you want, but you are _required_ to provide 20 pages with at least one question about each).
+The process that we ask you to follow is to sample a random page (using the [src/get_random_page.py](src/get_random_page.py) script provided in part 0), look at it, and try to think of a question that this page answers, and that someone might look for. Once you found a question, record the page, the question, and text from the page that answers this question (the text may come from different parts of the page). Do this until you have **questions from 20 different pages**. (You can have more than one question per page if you want, but you are _required_ to provide 20 pages with at least one question about each).
 
 **What questions to ask?** This is entirely up to you, the main criteria is that the question will be something that someone may realistically want to get an answer for. Note however that the questions are to be part of a search system, that is, while _you_ see the page when answering the question, the user will not see the page, and this will affect the kind of questions they are likely to ask. That is, if the question contains details you are likely not expected to know without reading the page, then it is likely not a good question for this project.
 
@@ -90,7 +90,7 @@ It is tempting to create questions that are easy to answer using the existing te
 
 You need to create a dataset of at least 20 queries and their expected answers, each of the 20 queries form a different page. Submit a `queries.csv` file with 5 columns, in this order:
 
-- The ID of the page containing the answer (the ID is derived from the filename. Each file has the form `pages/ID.html` )
+- The ID of the page containing the answer (the ID has 8 numbers and letters, and is derived from the filename. Each file has the form `pages/ID.html` )
 - The first paraphrase of the question or query
 - The second paraphrase of the question or query
 - "True" if you expect to all the answer to appear on this page, and "False" if this query may have additional parts of the answer in other pages.
@@ -102,9 +102,9 @@ Each line should be a single question. You should have exactly 20 lines (or more
 
 ### Part 1b: Indexing and Retrieval Warm-up (15 points)
 
-The file [docs.jsonl] contains 5000 short documents, each document is a json dict containing a "doc_id" field and a "text" field.
+The file [docs.jsonl](docs.jsonl) contains 5000 short documents, each document is a json dict containing a "doc_id" field and a "text" field.
 
-The file [queries.jsonl] contains 50 queries, each of them associated with the doc_id of a document which contains their answer.
+The file [queries.jsonl](queries.jsonl) contains 50 queries, each of them associated with the doc_id of a document which contains their answer.
 
 #### Reading the files
 
