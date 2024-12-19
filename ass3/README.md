@@ -193,6 +193,8 @@ For each of your 4 indices (bm25, dense-static-word-vectors, dense-avg-roberta, 
 
 (This requires writing code to compute both MRR and recall@20).
 
+For the dense indices, retrieve using the **cosine-similarity** metric.
+
 _Note_: results for the pre-trained dense vectors should be very high, because the models was trained specifically for this task, and it is likely that our data was also part of its train-set.
 #### What to submit
 
