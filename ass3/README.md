@@ -179,7 +179,7 @@ To convert a pytorch tensor to a numpy array/vector, use: `arr = pt.detach().cpu
 **Create three indices**:
 
 1. average static word vectors based on `word2vec-google-news-300` (from assignment 2).
-2. average contextual vectors from the `roberta-base` model.
+2. average contextual vectors from the `bert-base-uncased` model.
 3. using the pre-trained  `multi-qa-MiniLM-L6-dot-v1` model from the `sentence-transformers` package.
 
 Save each index (the `vecs` and `doc_ids` arrays) to its own file.
@@ -196,6 +196,7 @@ For each of your 4 indices (bm25, dense-static-word-vectors, dense-avg-roberta, 
 For the dense indices, retrieve using the **cosine-similarity** metric.
 
 _Note_: results for the pre-trained dense vectors should be very high, because the models was trained specifically for this task, and it is likely that our data was also part of its train-set.
+
 #### What to submit
 
 We ask you to only submit two files:
