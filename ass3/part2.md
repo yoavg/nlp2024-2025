@@ -2,7 +2,7 @@
 
 **Trying to help people get their rights!**
 
-[See Part 1 Here](README.md)
+Back to [Part 1](README.md)
 
 ## Part 2: Retrieval Augmented Generation system (65 points)
 **Submission deadline: 9/1/2025.**
