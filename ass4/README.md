@@ -24,7 +24,7 @@ The data is in the following file:
 
 Each line in the file is a JSON object representing one text-span pair and several questions about it. The SqUAD data-collection was not meant to be exhaustive, so the set of questions may or may not be comprehensive.
 
-In case you are interested or find this useful, the complete SqUAD training set, in HuggingFace format, is available in this file: [squad-train-hf.jsonl.gz](squad-train-hf.jsonl.gz). This set includes also the ones in the `data.jsonl` file above.
+In case you are interested or find this useful, the complete SqUAD training set, in HuggingFace format, is available [here](https://huggingface.co/datasets/rajpurkar/squad_v2). This set includes also the ones in the `data.jsonl` file above.
 
 ## Part 1: Manual Annotation
 
