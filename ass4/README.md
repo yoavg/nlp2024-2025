@@ -18,19 +18,19 @@ The task we attempt to perform is called Questuion Generation (QG) and is define
 
 ## The Data
 
-You will work with a set of 100 text-span pairs that we extracted from the [SqUAD](https://rajpurkar.github.io/SQuAD-explorer/) dataset. 
+You will work with a set of 100 text-span pairs that we extracted from the [SQuAD](https://rajpurkar.github.io/SQuAD-explorer/) dataset. 
 
 The data is in the following file:
 
 - [data.jsonl](data.jsonl)
 
-Each line in the file is a JSON object representing one text-span pair and several questions about it. The SqUAD data-collection was not meant to be exhaustive, so the set of questions may or may not be comprehensive.
+Each line in the file is a JSON object representing one text-span pair and several questions about it. The SQuAD data-collection was not meant to be exhaustive, so the set of questions may or may not be comprehensive.
 
-In case you are interested or find this useful, the complete SqUAD training set, in HuggingFace format, is available [here](https://huggingface.co/datasets/rajpurkar/squad_v2). This set includes also the ones in the `data.jsonl` file above.
+In case you are interested or find this useful, the complete SQuAD training set, in HuggingFace format, is available [here](https://huggingface.co/datasets/rajpurkar/squad_v2). This set includes also the ones in the `data.jsonl` file above.
 
 ## Part 1: Manual Annotation
 
-Select 20 text-span pairs from the file. Without looking at the provided questions, annotate (generate a comprehensive set of questions) for each of the 20 text-span pairs.
+Select 20 text-span pairs from the file. Without looking at the provided questions, annotate (generate a comprehensive set of questions) for each of the 20 text-span pairs. We will call these manually generated questions the _gold annotation_ set (or _the gold set_ for short).
 
 **Output of this part:**
 
@@ -49,7 +49,7 @@ Use an LLM API to perform the question generation task. For each of the text-spa
 
 ## Part 3: Basic Statistics
 
-How many questions on average were generated for each pair? What is the distribution of number-of-questions over the entire set? How long on average is each question (choose a length metric that makes sense to you). Compare the numbers for your 
+How many questions on average were generated for each pair? What is the distribution of number-of-questions over the entire set? How long on average is each question (choose a length metric that makes sense to you). Compare the numbers to the ones in your annotated set.
 
 **Output of this part:**
 
@@ -115,6 +115,8 @@ Concretely, you need to validate the ability of the LLM to answer the generated 
 
 A related quantity we ask you to compute is the ability of the model to answer the questions _without seeing the texts_ while providing the same (or equivalent) asnwers as those based on the texts.
 
+This part should be based on the entire set (100 pairs), and not just the 20 annotated pairs. You should compute numbers both based on the entire set, and based on the 20 pairs for which you have gold annotations.
+
 **Output of this part:**
 
 - A description of your procedure / prompts.
@@ -124,17 +126,21 @@ A related quantity we ask you to compute is the ability of the model to answer t
 
 Your JSON format should include all the requested items, in a way that is understandable and clear to an external reader.
 
-## Part 5: Evaluation using an LLM ("LLM as a judge")
+## Part 6: Evaluation using an LLM ("LLM as a judge")
 
-Another way of using LLM is to use them directly as evaluators of quality. Here, we wish the LLM to directly answer two questions related to the quality of the questions:
+Another way of using an LLM is to use them directly as evaluators of quality. Here, we wish the LLM to directly answer two questions related to the quality of the questions:
 
 1) Is the question grammatical and fluent?
 
 2) Is the question answerable from the text, and if so, is the answer according to the text consistent with the original intended answer?
 
-Note that question (2) relies on the same information the LLM verification process was intended to measure, but here we ask the LLM to assess it directly, while in the validation case we ask the LLM to perform the task and interpret the results --- a different computational process.
+Note that question (2) relies on the same information the LLM verification process was intended to measure, but here we ask the LLM to assess it directly, while in the validation case we ask the LLM to perform the task and the we interpret the results ourselves --- a different computational process.
 
 It is interesting to note if these processes agree or disagree with each other, and the implications of this.
+
+Like the previous one, this part should also be based on the entire set (100 pairs), and not just the 20 annotated pairs. You should compute numbers both based on the entire set, and based on the 20 pairs for which you have gold annotations.
+
+For answering questions 1 and 2, you need to decide on some scale (is it just binary? or maybe more graded? is it numeric or categorical? etc). We leave this decision up to you, please describe it in your report.
 
 **Output of this part:**
 
@@ -145,7 +151,7 @@ It is interesting to note if these processes agree or disagree with each other, 
 
 Your JSON format should include all the requested items, in a way that is understandable and clear to an external reader.
 
-## Part 6: Manual Evaluation
+## Part 7: Manual Evaluation
 
 Finally, we want you to perform manual evaluation. Use the 20 text-span pairs you fully annotated.
 
@@ -165,13 +171,16 @@ Finally, we want you to evaluate the generated _set_ of questions:
 
 4) For each of the 20 text-span pairs, is the _set of questions_ exhaustive? Compare it to your gold annotation, are all questions covered? Are there questions in one set and not in the other? Are there repeated questions? Etc.
 
+
+Again, some of these questions require deciding on a scale. Decide and describe your decision and its reasoning.
+
 **Output of this part:**
 
 - A description of your procedure.
 - Readable graphs and/or tables with the above information (evaluation of the generated questions according to each metric).
 - A brief discussion of the results and what you learn from them.
 
-## Part 7: Wrapping it up
+## Part 8: Wrapping it up
 
 Write a summary of the entire process and the overall results. What did you learn from it? Focus on the correlations between the different metrics and techniques, and what we can learn from them. Discuss also the strengths and weaknesses of the different approaches, specific challenges you found, etc.
 
