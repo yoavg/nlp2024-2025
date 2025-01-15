@@ -58,13 +58,52 @@ How many questions on average were generated for each pair? What is the distribu
 
 Both of these items should be incorporated in your report.
 
-## Part 4: Automatic Evaluation via the Rouge metric
+## Part 4: Automatic Evaluation via the ROUGE Metric
 
-@@TBD BY REUT/IDO@@
+**Essential Preliminaries**
+
+ROUGE (Recall-Oriented Understudy for Gisting Evaluation) is a set of metrics used for evaluating the quality of generated content by models, particularly in the context of text summarization and long-form answer generation.
+The ROUGE metric focuses on comparing the generated text against one (or more) human-generated references.
+
+There are different variants of the ROUGE metric:
+
+- **ROUGE-N**: This measures n-gram overlap between the generated and reference texts. The higher the overlap, the better the score. Commonly used n-grams are:
+- **ROUGE-1**: Overlap of unigrams (single words).
+- **ROUGE-2**: Overlap of bigrams (two-word sequences).
+- **ROUGE-L**: This metric captures the longest common subsequence (LCS) between the generated text and reference. 
+- **ROUGE-W**: This is a weighted version of ROUGE-L that takes into account the length of the LCS, emphasizing longer matches more significantly.
+
+All versions of ROUGE provide measurements of:
+   - Recall: The proportion of n-grams in the reference text that are also found in the generated text.
+   - Precision: The proportion of n-grams in the generated text that are found in the reference text.
+   - F1 Score: The harmonic mean of recall and precision, providing a single score to summarize the balance between the two.
+
+ROUGE is very widely used as a computationally efficient way to assess the quality of generated text. However, as shall be seen shortly, it has advantages but also disadvantages, and it is often advised to complement ROUGE with qualitative evaluations to capture aspects of coherence, relevance, and readability not reflected by the n-gram overlap alone.
+
+**Your task***
+
+Evaluate the generated questions using ROUGE, using your manual annotations as the gold set.
+
+In order to use ROUGE to evaluate the generated question sets, we will view the set of questions as a single piece of text to be evaluated. For each set of questions, order the questions alphabetically, wrap each question with `<BOQ>` (Begin of Question) and `<EOQ>` markers, and concatenate them into a single string where each wrapped question is separated by a newline. Do this once for the gold set (g) and once for the predicted set (p), and compute ROUGE between `g` and `p`.
+
+_Which rouge metrics?_
+
+- use the [rouge-score](https://github.com/google-research/google-research/tree/master/rouge) python package (`pip install rouge-score`) to compute the ROUGE-2, ROUGE-L and ROUGE-W scores for each of your 20 (g,p) pairs in the evaluation set.
+- Compute an average ROUGE-2, average ROUGE-L and average ROUGE-W of all pairs.
+
+Note that the way we compute ROUGE scores over the sets of questions by linearizing each set into a single string and comparing ROUGE between two strings representing sets, is not ideal (why?). You are encouraged to think of better alternatives (and possibly also to implement them).
+
+Write down your results (the different ROUGE scores you obtained) and observations based on them.
 
 **Output of this part:**
 
-@@TBD BY REUT/IDO@@
+Discuss the following items in your pdf report:
+
+1) Add to your report a table that, for each of the text+answer pair in your evaluation set, provides its ROUGE-2 ROUGE-L and ROUGE-W scores (Precision, Recall, F), and a summary line reporting the averages of all metrics over the 20 questions.
+2) For each of the metrics (ROUGE-2 ROUGE-L and ROUGE-W) look at the best F score, worst F score and a middle-way F score in the table. Now fetch the corresponding sets from your evaluation and rank the triplet manually. For each of these metrics, does the order provided by the metric reflects your own judgment of which question is better? Among the three ROUGE variants, does any one variant reflect your judgment better than the others? If you had to choose only one version, which one would you go for an why?
+3) Reflect on our use of ROUGE for evaluating question generation. What are the pros and cons of using ROUGE in general, and of the way we used ROUGE here? Can you think of a different way to use ROUGE for evaluating the quality of the questions? Can you think of other variants not considered here, for evaluating question generation
+4) If you experimented with alternative ways to use ROUGE over the question sets, describe and discuss these efforts as well.
+
 
 ## Part 5: Validation using an LLM
 
@@ -149,7 +188,6 @@ Include also a discussion of the idea to use an LLM to evaluate the outputs of t
 - The following files:
     - `annotations.jsonl`
     - `generations.jsonl`
-    - ROUGE FILES TBD
     - `validation_outputs.jsonl`
     - `llm_judge_outputs.jsonl`
 
