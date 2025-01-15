@@ -4,15 +4,17 @@
 
 ## Introduction
 
-In this assignment we will take a class we discussed in class (Question Generation), attempt to perform it using calls to an LLM, assess the results in various ways, and discuss our results.
+In this assignment we will take a task we discussed in class (Question Generation), attempt to perform it using calls to an LLM, assess the results in various ways, and discuss our results.
 
 ## The Task
 
-The task we attempt to perform is defined as follows:
+The task we attempt to perform is called Questuion Generation (QG) and is defined as follows:
 
 > Given a short text and a span within the text, generate all the questions whose answer, based on the text, is the given span.
 > The generated set of questions should be comprehensive (ask all the semantically different questions) but also distinct (if two questions in a set are just paraphrases of each other, we should be aware of it and treat them as the same question).
 > The questions should be grammatically valid, fluent, and naturally sounding.
+
+**For example**, given the text "_The focus on this assignment is Question Generation, an NLP task that is concerned with generating questions_" and the span "Question Generation", the set {"_what is the focus of this assignment?_", "_what is the name of the NLP task?_" } is comprehensive and covers the two questions that can be asked based on the text whose answer is "_Question Generation_". The two questions "_what is the name of the NLP task?_" and "_how is the NLP task called?_" are paraphrases of one another and are considered as the same question.
 
 ## The Data
 
