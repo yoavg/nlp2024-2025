@@ -113,7 +113,7 @@ In a "real-life" process, usually this part acts as quality assurance (if many q
 
 Concretely, you need to validate the ability of the LLM to answer the generated questions, based on the text, and get the same (or equivalent) answers  to the original spans. Do this by writing a strong prompt template that will receive instructions, text and question, and answer the question based on the text. Run this on all the generated questions, record the answers, and validate them.
 
-A related quantity we ask you to compute is the ability of the model to answer the questions _without seeing the texts_ while providing the same (or equivalent) asnwers as those based on the texts.
+A related quantity we ask you to compute is the ability of the model to answer the questions _without seeing the texts_ while providing the same (or equivalent) answers as those based on the texts.
 
 This part should be based on the entire set (100 pairs), and not just the 20 annotated pairs. You should compute numbers both based on the entire set, and based on the 20 pairs for which you have gold annotations.
 
